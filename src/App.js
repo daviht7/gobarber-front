@@ -6,6 +6,7 @@ import history from "./services/history";
 import { Provider } from "react-redux";
 import { store, persistor } from "./store";
 import { PersistGate } from "redux-persist/lib/integration/react";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Router history={history}>
           <Routes />
           <GlobalStyle />
+          <ToastContainer autoClose={3000} />
         </Router>
       </PersistGate>
     </Provider>
