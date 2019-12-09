@@ -17,3 +17,23 @@ export function signFailure() {
     type: "@user/SIGN_FAILURE"
   };
 }
+
+export function updateProfileRequest(data) {
+  return {
+    type: "@user/UPDATE_PROFILE_REQUEST",
+    payload: { data }
+  };
+}
+
+export function updateProfileFailure() {
+  return {
+    type: "@user/UPDATE_PROFILE_FAILURE"
+  };
+}
+
+export function updateProfileSuccess(profile) {
+  return {
+    type: "@user/UPDATE_PROFILE_SUCCESS",
+    payload: { profile }
+  };
+}
