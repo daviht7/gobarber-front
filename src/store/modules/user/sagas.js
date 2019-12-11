@@ -6,18 +6,14 @@ import api from "~/services/api";
 import { toast } from "react-toastify";
 
 export function* updateProfile({ payload }) {
-  console.log(payload.data);
   try {
-    const { email, name, ...rest } = payload.data;
+    const { email, name, avatar_id, ...rest } = payload.data;
 
     const profile = Object.assign(
-      { name, email },
+      { name, email, avatar_id },
       rest.oldPassword ? rest : {}
     );
-    console.log(profile);
-
     const response = yield call(api.put, "users", profile);
-    console.log("response.data", response.data);
     yield put(updateProfileSuccess(response.data));
 
     toast.success("Perfil atualizado com sucesso!");

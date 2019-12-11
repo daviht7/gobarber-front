@@ -23,10 +23,7 @@ export default function Header() {
               <strong>{user.name}</strong>
               <Link to="/profile">Meu Perfil</Link>
             </div>
-            <img
-              src="https://api.adorable.io/avatars/40/abott@adorable.png"
-              alt="Davi Holanda"
-            />
+            <img src={user.avatar.url} alt="Davi Holanda" />
           </Profile>
         </aside>
       </Content>
